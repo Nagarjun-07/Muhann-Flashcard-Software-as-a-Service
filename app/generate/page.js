@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import {db} from '@/firebase'
 import {
   Container,
   TextField,
@@ -12,7 +13,7 @@ import {
 } from '@mui/material'
 import {useUser} from '@clerk/nextjs'
 import {useRouter} from 'next/navigation'
-import {writeBatch,doc,collection,getDoc} from 'firebase/firestore'
+import {writeBatch,doc,collection,getDoc,setDoc} from 'firebase/firestore'
 import {Card,CardActionArea,CardContent,Grid,Dialog,DialogTitle,DialogContentText,DialogContent} from '@mui/material'
 
 export default function Generate() {
@@ -57,7 +58,7 @@ const handleCardClick=(id)=>{
 
 const handleOpen=()=>
 {
-    setOpenI(true)
+    setOpen(true)
 }
 const handleClose=()=>
 {
@@ -90,7 +91,7 @@ const saveFlashcards=async()=>
     const colRef=collection(userDocRef,name)
     flashcards.forEach((flashcard)=>{
         const cardDocRef=doc(colRef)
-        batch.set(cardocRef,flashcard)
+        batch.set(carDocRef,flashcard)
     }
     )
     await batch.commit()
