@@ -1,5 +1,61 @@
+/* globals.css */
+
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Inter', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff8e53;
+    transform: scale(1.02);
+}
+
+
+/* Animations */
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
